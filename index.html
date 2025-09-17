@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fleurrant — Variance Reduction for AI Infrastructure</title>
+  <meta name="description" content="Fleurrant's P-bit engine cuts Monte Carlo variance for AI/ML workloads, reducing samples 5–10× while keeping accuracy.">
+  <link rel="icon" href="/assets/logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* optional: subtle grid background */
+    body { background: radial-gradient(1200px circle at 20% -10%, rgba(20,20,30,.35), transparent 40%), #0f0f10; }
+  </style>
+</head>
+<body class="text-zinc-200 antialiased">
+  <!-- Nav -->
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="/assets/logo.svg" alt="Fleurrant" class="w-8 h-8">
+      <span class="font-semibold tracking-wide">Fleurrant</span>
+    </div>
+    <nav class="hidden sm:flex gap-6 text-sm">
+      <a href="#problem" class="hover:text-white/90">Problem</a>
+      <a href="#solution" class="hover:text-white/90">Solution</a>
+      <a href="#proof" class="hover:text-white/90">Proof</a>
+      <a href="#roadmap" class="hover:text-white/90">Roadmap</a>
+      <a href="#contact" class="hover:text-white/90">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-6 pb-12">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
+          Variance Reduction for <span class="text-teal-400">AI Infrastructure</span>
+        </h1>
+        <p class="mt-4 text-lg text-zinc-300">
+          Fleurrant’s P-bit engine delivers <span class="font-semibold">5–10× fewer samples</span>
+          than Monte Carlo for the same accuracy—cutting GPU costs today and laying the groundwork
+          for tomorrow’s probabilistic computers.
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a href="#proof" class="px-5 py-3 rounded-xl bg-teal-500 text-black font-medium hover:bg-teal-400">See the Demo</a>
+          <a href="#contact" class="px-5 py-3 rounded-xl border border-zinc-700 hover:border-zinc-500">Get SDK Access</a>
+        </div>
+      </div>
+      <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+        <!-- Placeholder chart visuals -->
+        <div class="text-sm text-zinc-400 mb-2">CI half-width vs time</div>
+        <div class="h-40 rounded-lg bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
+          <span class="text-zinc-500">MC (wide) vs P-bit (tight) bell curve here</span>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+          <div class="p-3 rounded-xl bg-zinc-900 border border-zinc-800">
+            <div class="text-zinc-400">Samples to target CI</div>
+            <div class="text-xl font-semibold">P-bit: 0.1× MC</div>
+          </div>
+          <div class="p-3 rounded-xl bg-zinc-900 border border-zinc-800">
+            <div class="text-zinc-400">GPU Hours Saved</div>
+            <div class="text-xl font-semibold">Up to 10×</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="max-w-6xl mx-auto px-6 py-12 border-t border-zinc-800">
+    <h2 class="text-2xl font-semibold">Monte Carlo is the Hidden Tax of AI</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium mb-1">Negative Sampling</div>
+        <p class="text-zinc-400 text-sm">Contrastive learning burns millions of GPU-hours on random negatives.</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium mb-1">Evaluation & CI</div>
+        <p class="text-zinc-400 text-sm">Confidence intervals take thousands of samples to stabilize.</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium mb-1">Uncertainty & RL</div>
+        <p class="text-zinc-400 text-sm">Rollouts and calibration are dominated by MC variance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section id="solution" class="max-w-6xl mx-auto px-6 py-12 border-t border-zinc-800">
+    <h2 class="text-2xl font-semibold">The P-bit Engine: Variance-Aware Sampling</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium mb-1">Fewer Samples</div>
+        <p class="text-zinc-400 text-sm">Rao–Blackwell tails & structured sampling cut variance 5–10×.</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium mb-1">Same Accuracy</div>
+        <p class="text-zinc-400 text-sm">Unbiased mean; tighter bell curves (smaller CI).</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium mb-1">Drop-In SDK</div>
+        <p class="text-zinc-400 text-sm">PyTorch-friendly, deterministic, reproducible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section id="proof" class="max-w-6xl mx-auto px-6 py-12 border-t border-zinc-800">
+    <h2 class="text-2xl font-semibold">See It Work</h2>
+    <p class="mt-2 text-zinc-400">Dice (independent) and Cards (dependent): P-bit reaches the same CI with far fewer samples than Monte Carlo.</p>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium">Dice — Sum ≥ T</div>
+        <p class="text-sm text-zinc-400">MC vs P-bit convergence (live demo soon).</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div class="font-medium">Cards — Dependent Case</div>
+        <p class="text-sm text-zinc-400">Tighter CI under correlation (live demo soon).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section id="roadmap" class="max-w-6xl mx-auto px-6 py-12 border-t border-zinc-800">
+    <h2 class="text-2xl font-semibold">Today: Savings. Tomorrow: the P-bit OS.</h2>
+    <ul class="mt-4 space-y-2 text-zinc-400">
+      <li>• Variance-aware SDK (eval + negative sampling)</li>
+      <li>• Runtime & DSL (probability-native primitives)</li>
+      <li>• Operating System for p-bit computers</li>
+    </ul>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact" class="max-w-6xl mx-auto px-6 py-12 border-t border-zinc-800">
+    <div class="grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <div class="text-lg font-medium">Start saving compute today</div>
+        <p class="text-zinc-400 text-sm mt-1">Pilot partners, grants & NVIDIA Inception inquiries welcome.</p>
+      </div>
+      <div class="flex md:justify-end">
+        <a href="mailto:hello@fleurrant.com" class="px-5 py-3 rounded-xl bg-teal-500 text-black font-medium hover:bg-teal-400">Contact Us</a>
+      </div>
+    </div>
+    <div class="mt-8 text-xs text-zinc-500">© Fleurrant</div>
+  </footer>
+</body>
+</html>
